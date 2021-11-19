@@ -1,6 +1,13 @@
 module.exports = (input) => {
-    let text = readAsText(input);
-
-    return text;
+    
+    var fs = require('fs');
+    
+    try {
+        const data = fs.readFileSync(input, 'utf8')
+        console.log(data)
+        return data;
+      } catch (err) {
+        console.error(err)
+      }
 
 }

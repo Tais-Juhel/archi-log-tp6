@@ -7,7 +7,12 @@
         },
         "2": {
             "filter": "<capatalize>",
-            "params":[]
+            "params":[],
+            "next":"3"
+        },
+        "3": {
+                "filter": "<reverse>",
+                "params":[]
         }
     }
 }

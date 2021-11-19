@@ -5,7 +5,7 @@ fs.readdir('./filters', (err, filtersDir) => {
         console.log("Filter:",filter)
         filterF = require('./filters/'+filter)
         if(typeof filterF  == "function") {
-            filterF("Salut")
+           filterF("text.txt")
             console.log('OK')
         } else {
             console.log('No comform filter')

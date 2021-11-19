@@ -2,11 +2,11 @@
     "steps" : {
         "1": {
             "filter": "<read>",
-            "params": [],
+            "params": ["text.txt"],
             "next": "2"
         },
         "2": {
-            "filter": "<filter_2>",
+            "filter": "<capatalize>",
             "params":[]
         }
     }

@@ -16,15 +16,17 @@ fs.readdir('./filters', (err, filtersDir) => {
 })
 
 try {
-    if(typeof FILTERS.steps == 'Array' && FILTERS.steps.length !=0) {
+    if(typeof FILTERS.steps == 'object' && FILTERS.steps.length !=0) {
         FILTERS.steps["0"]
-        FILTERS.steps.forEach(fltr => {
-            const filterF = require('./filters'+fltr.filter)
-            console.log(fltr.filter+":")
-            if(typeof fltr.params == 'Array') {
+        console.log(FILTERS.steps)
+        Object.entries(FILTERS.steps).forEach(fltr => {
+            console.log(fltr)
+            require('./filters/'+fltr[1].filter)
+            console.log(fltr[1].filter+":")
+            if(typeof fltr[1].params == 'object') {
                 console.log('OK')
             } else {
-                console.log('param must be an array')
+                console.log('params must be an array')
             }
         })
     }

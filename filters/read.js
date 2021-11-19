@@ -1,6 +1,6 @@
 module.exports = (input) => {
-let text=readAsText(input);
+    let text = readAsText(input);
 
-return text;
+    return text;
 
 }
